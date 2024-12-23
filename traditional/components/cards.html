@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片组件 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/cards.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>卡片组件 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/cards.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="content">
+            <h2>基础卡片</h2>
+            <div class="cards-grid">
+                <!-- 基础卡片 -->
+                <div class="card">
+                    <img src="https://picsum.photos/400/200" alt="卡片图片" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">卡片标题</h3>
+                        <p class="card-text">这是一个基础卡片示例，展示了图片、标题、描述文本和按钮的基本布局。</p>
+                        <button class="btn btn-primary">了解更多</button>
+                    </div>
+                </div>
+
+                <!-- 带标签的卡片 -->
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="https://picsum.photos/400/201" alt="卡片图片" class="card-image">
+                        <span class="card-badge">新品</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">带标签的卡片</h3>
+                        <p class="card-text">这个卡片在右上角添加了一个标签，用于显示状态或分类信息。</p>
+                        <button class="btn btn-success">查看详情</button>
+                    </div>
+                </div>
+
+                <!-- 带图标的卡片 -->
+                <div class="card">
+                    <img src="https://picsum.photos/400/202" alt="卡片图片" class="card-image">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <svg class="card-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <h3 class="card-title">带图标的卡片</h3>
+                        </div>
+                        <p class="card-text">这个卡片的标题旁边添加了一个图标，增强了视觉效果。</p>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">立即购买</button>
+                            <span class="card-price">¥99.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>交互式卡片</h2>
+            <div class="cards-grid">
+                <!-- 悬停效果卡片 -->
+                <div class="card card-hover">
+                    <img src="https://picsum.photos/400/203" alt="卡片图片" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">悬停效果卡片</h3>
+                        <p class="card-text">将鼠标悬停在此卡片上会有放大和阴影加深的效果。</p>
+                        <button class="btn btn-purple">了解更多</button>
+                    </div>
+                </div>
+
+                <!-- 渐变背景卡片 -->
+                <div class="card card-gradient">
+                    <div class="card-content">
+                        <h3 class="card-title">渐变背景卡片</h3>
+                        <p class="card-text">使用渐变背景可以创建更有趣的视觉效果。</p>
+                        <button class="btn btn-white">开始使用</button>
+                    </div>
+                </div>
+
+                <!-- 带统计数据的卡片 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">数据统计卡片</h3>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">1,234</span>
+                                <span class="stat-label">访问量</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">98%</span>
+                                <span class="stat-label">满意度</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark btn-full">查看报告</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

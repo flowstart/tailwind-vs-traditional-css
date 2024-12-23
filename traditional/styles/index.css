@@ -1,0 +1,157 @@
+/* 主要内容样式 */
+.content-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* 组件导航样式 */
+.component-nav {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem;
+}
+
+.component-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #111827;
+    background-color: #f3f4f6;
+}
+
+/* 组件说明样式 */
+.component-desc {
+    padding: 1.5rem;
+}
+
+.component-desc h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.desc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.desc-item {
+    padding-left: 1rem;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+.desc-item h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.desc-item p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* 颜色变体 */
+.desc-item.blue {
+    border-left-color: #3b82f6;
+}
+
+.desc-item.green {
+    border-left-color: #22c55e;
+}
+
+.desc-item.yellow {
+    border-left-color: #eab308;
+}
+
+.desc-item.red {
+    border-left-color: #ef4444;
+}
+
+.desc-item.purple {
+    border-left-color: #a855f7;
+}
+
+.desc-item.indigo {
+    border-left-color: #6366f1;
+}
+
+.desc-item.pink {
+    border-left-color: #ec4899;
+}
+
+.desc-item.gray {
+    border-left-color: #6b7280;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: white;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.footer-content a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: #2563eb;
+}
+
+/* 响应式设计 */
+@media (min-width: 640px) {
+    .component-nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .component-desc {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .desc-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .component-nav nav {
+        gap: 1rem;
+    }
+}

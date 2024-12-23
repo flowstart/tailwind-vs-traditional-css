@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实用组件 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/utilities.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>实用组件 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/utilities.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <!-- 提示框 -->
+        <section class="section">
+            <h2>提示框（Toast）</h2>
+            <div class="toast-demo">
+                <!-- 提示框触发按钮 -->
+                <div class="button-group">
+                    <button class="btn btn-success" onclick="showToast('success')">成功提示</button>
+                    <button class="btn btn-danger" onclick="showToast('error')">错误提示</button>
+                    <button class="btn btn-info" onclick="showToast('info')">信息提示</button>
+                </div>
+
+                <!-- 提示框容器 -->
+                <div id="toastContainer" class="toast-container"></div>
+            </div>
+        </section>
+
+        <!-- 工具提示 -->
+        <section class="section">
+            <h2>工具提示（Tooltip）</h2>
+            <div class="tooltip-demo">
+                <!-- 基础工具提示 -->
+                <div class="button-group">
+                    <button class="btn btn-primary tooltip" data-tooltip="这是一个基础工具提示">
+                        悬停查看提示
+                    </button>
+                    <button class="btn btn-secondary tooltip" data-tooltip="包含更多详细信息的工具提示">
+                        查看详细信息
+                    </button>
+                </div>
+
+                <!-- 带图标的工具提示 -->
+                <div class="tooltip-with-icon">
+                    <span class="label">重要提示</span>
+                    <span class="tooltip icon-info" data-tooltip="这是一条重要的说明信息">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 进度条 -->
+        <section class="section">
+            <h2>进度条（Progress）</h2>
+            <div class="progress-demo">
+                <!-- 基础进度条 -->
+                <div class="progress-wrapper">
+                    <div class="progress-header">
+                        <span class="progress-label">基础进度条</span>
+                        <span class="progress-value" id="basicProgressText">25%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" id="basicProgress" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <!-- 带条纹的进度条 -->
+                <div class="progress-wrapper">
+                    <div class="progress-header">
+                        <span class="progress-label">带条纹的进度条</span>
+                        <span class="progress-value">50%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar striped" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <!-- 分段进度条 -->
+                <div class="progress-wrapper">
+                    <div class="progress-header">
+                        <span class="progress-label">分段进度条</span>
+                        <span class="progress-value">3/5 步骤</span>
+                    </div>
+                    <div class="segmented-progress">
+                        <div class="segment active"></div>
+                        <div class="segment active"></div>
+                        <div class="segment active"></div>
+                        <div class="segment"></div>
+                        <div class="segment"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加载状态 -->
+        <section class="section">
+            <h2>加载状态（Loading）</h2>
+            <div class="loading-demo">
+                <!-- 按钮加载状态 -->
+                <div class="loading-card">
+                    <h3>按钮加载状态</h3>
+                    <button id="loadingButton" class="btn btn-primary" onclick="toggleLoading(this)">
+                        <span>点击加载</span>
+                    </button>
+                </div>
+
+                <!-- 卡片加载状态 -->
+                <div class="loading-card">
+                    <h3>卡片加载状态</h3>
+                    <div id="loadingCard" class="skeleton-card">
+                        <div class="skeleton-line large"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line medium"></div>
+                    </div>
+                </div>
+
+                <!-- 表格加载状态 -->
+                <div class="loading-card">
+                    <h3>表格加载状态</h3>
+                    <div id="loadingTable" class="skeleton-table">
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line small"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 提示框功能
+        function showToast(type) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            
+            let icon, message;
+            switch(type) {
+                case 'success':
+                    icon = `<svg viewBox="0 0 24 24">
+                        <path d="M5 13l4 4L19 7" />
+                    </svg>`;
+                    message = '操作成功完成！';
+                    break;
+                case 'error':
+                    icon = `<svg viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>`;
+                    message = '操作出现错误！';
+                    break;
+                case 'info':
+                    icon = `<svg viewBox="0 0 24 24">
+                        <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>`;
+                    message = '这是一条提示信息。';
+                    break;
+            }
+            
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <div class="toast-icon">${icon}</div>
+                <span class="toast-message">${message}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('hide');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // 进度条功能
+        let progress = 25;
+        const basicProgress = document.getElementById('basicProgress');
+        const basicProgressText = document.getElementById('basicProgressText');
+
+        setInterval(() => {
+            progress = (progress + 5) % 100;
+            basicProgress.style.width = `${progress}%`;
+            basicProgressText.textContent = `${progress}%`;
+        }, 1000);
+
+        // 加载状态功能
+        function toggleLoading(button) {
+            const span = button.querySelector('span');
+            const isLoading = button.classList.contains('loading');
+            
+            if (isLoading) {
+                button.classList.remove('loading');
+                span.textContent = '点击加载';
+            } else {
+                button.classList.add('loading');
+                span.textContent = '加载中...';
+                
+                // 模拟加载完成
+                setTimeout(() => toggleLoading(button), 2000);
+            }
+        }
+
+        // 模拟卡片和表格的加载动画
+        function togglePulse(elements) {
+            elements.forEach(el => {
+                el.classList.add('pulse');
+                setTimeout(() => el.classList.remove('pulse'), 2000);
+            });
+        }
+
+        const cardElements = document.querySelectorAll('#loadingCard .skeleton-line');
+        const tableElements = document.querySelectorAll('#loadingTable .skeleton-line');
+
+        setInterval(() => {
+            togglePulse(cardElements);
+            togglePulse(tableElements);
+        }, 3000);
+    </script>
+</body>
+</html>

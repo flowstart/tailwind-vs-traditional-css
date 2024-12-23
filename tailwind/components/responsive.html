@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局 - Tailwind CSS</title>
+    <link href="/src/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">响应式布局 - Tailwind CSS</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">返回首页</a>
+                    <a href="../../traditional/components/responsive.html" class="text-gray-600 hover:text-gray-900">
+                        切换到传统 CSS 版本
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- 响应式网格布局 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">响应式网格布局</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-2">卡片 1</h3>
+                    <p class="text-gray-600">这是一个响应式网格布局示例，在不同屏幕尺寸下会自动调整列数。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-2">卡片 2</h3>
+                    <p class="text-gray-600">在移动设备上显示为单列，平板电脑上显示为两列。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-2">卡片 3</h3>
+                    <p class="text-gray-600">在桌面设备上显示为四列，实现最佳的空间利用。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-2">卡片 4</h3>
+                    <p class="text-gray-600">使用 Tailwind 的响应式前缀可以轻松实现这种布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式导航栏 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">响应式导航栏</h2>
+            <nav class="bg-white shadow rounded-lg">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <div class="flex-shrink-0 flex items-center">
+                                <span class="text-xl font-bold text-blue-600">Logo</span>
+                            </div>
+                            <div class="hidden md:flex md:space-x-8 md:ml-10">
+                                <a href="#" class="inline-flex items-center px-1 pt-1 text-gray-900">首页</a>
+                                <a href="#" class="inline-flex items-center px-1 pt-1 text-gray-500 hover:text-gray-900">产品</a>
+                                <a href="#" class="inline-flex items-center px-1 pt-1 text-gray-500 hover:text-gray-900">服务</a>
+                                <a href="#" class="inline-flex items-center px-1 pt-1 text-gray-500 hover:text-gray-900">关于</a>
+                            </div>
+                        </div>
+                        <div class="flex md:hidden">
+                            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 移动端菜单 -->
+                <div class="hidden md:hidden">
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-gray-50">首页</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">产品</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">服务</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">关于</a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- 响应式侧边栏布局 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">响应式侧边栏布局</h2>
+            <div class="flex flex-col md:flex-row bg-white rounded-lg shadow overflow-hidden">
+                <!-- 侧边栏 -->
+                <div class="w-full md:w-64 bg-gray-50 p-4">
+                    <nav class="space-y-2">
+                        <a href="#" class="block px-4 py-2 rounded-md bg-blue-50 text-blue-700">仪表盘</a>
+                        <a href="#" class="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">用户管理</a>
+                        <a href="#" class="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">订单管理</a>
+                        <a href="#" class="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">设置</a>
+                    </nav>
+                </div>
+                <!-- 主内容区 -->
+                <div class="flex-1 p-6">
+                    <h3 class="text-lg font-semibold mb-4">主内容区</h3>
+                    <p class="text-gray-600 mb-4">
+                        这是一个响应式侧边栏布局示例。在移动设备上，侧边栏会显示在内容区域的上方；
+                        在较大屏幕上，侧边栏会显示在内容区域的左侧。这种布局非常适合后台管理系统。
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-semibold mb-2">统计数据</h4>
+                            <p class="text-gray-600">展示重要的数据统计信息</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-semibold mb-2">活动记录</h4>
+                            <p class="text-gray-600">显示最近的系统活动</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式英雄区块 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">响应式英雄区块</h2>
+            <div class="relative bg-white rounded-lg shadow overflow-hidden">
+                <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                    <img class="h-56 w-full object-cover lg:absolute lg:h-full" 
+                         src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" 
+                         alt="办公场景">
+                </div>
+                <div class="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
+                    <div class="lg:pr-8">
+                        <div class="max-w-md mx-auto lg:max-w-none">
+                            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                                专注于响应式设计
+                            </h2>
+                            <p class="mt-4 text-lg text-gray-500">
+                                响应式设计不仅仅是改变布局，更是为用户在不同设备上提供最佳的浏览体验。
+                                通过精心设计的断点和布局系统，我们可以确保内容在任何屏幕尺寸下都能完美呈现。
+                            </p>
+                            <div class="mt-6">
+                                <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
+                                    了解更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式卡片网格 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">响应式卡片网格</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 特色卡片 -->
+                <div class="col-span-1 sm:col-span-2 lg:col-span-3">
+                    <div class="bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg shadow-lg overflow-hidden">
+                        <div class="px-6 py-8 sm:p-10">
+                            <h3 class="text-2xl font-bold text-white mb-4">特色内容</h3>
+                            <p class="text-purple-100">
+                                这是一个跨越所有列的特色卡片，用于展示重要信息或推广内容。
+                                在所有屏幕尺寸下都会占据完整宽度。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 普通卡片 -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-2">标准卡片 1</h3>
+                    <p class="text-gray-600">这些卡片会根据屏幕宽度自动调整布局，确保最佳的内容展示效果。</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-2">标准卡片 2</h3>
+                    <p class="text-gray-600">在移动设备上显示为单列，在平板上显示为两列，在桌面设备上显示为三列。</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-2">标准卡片 3</h3>
+                    <p class="text-gray-600">使用 Tailwind 的网格系统可以轻松实现这种复杂的响应式布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式表格 -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">响应式表格</h2>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    名称
+                                </th>
+                                <th class="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    职位
+                                </th>
+                                <th class="hidden md:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    部门
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    状态
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-full bg-gray-200"></div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">张三</div>
+                                            <div class="sm:hidden text-sm text-gray-500">产品经理</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hidden sm:table-cell px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">产品经理</div>
+                                </td>
+                                <td class="hidden md:table-cell px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">产品部</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        在线
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-full bg-gray-200"></div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">李四</div>
+                                            <div class="sm:hidden text-sm text-gray-500">开发工程师</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hidden sm:table-cell px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">开发工程师</div>
+                                </td>
+                                <td class="hidden md:table-cell px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">技术部</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        忙碌
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 移动端菜单切换
+        const menuButton = document.querySelector('button');
+        const mobileMenu = document.querySelector('.hidden.md\\:hidden');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

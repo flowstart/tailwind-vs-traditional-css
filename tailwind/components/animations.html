@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画效果 - Tailwind CSS</title>
+    <link href="/src/style.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes spin-slow {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes slide-in {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-custom {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 3s linear infinite;
+        }
+
+        .animate-slide-in {
+            animation: slide-in 0.5s ease-out;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">动画效果 - Tailwind CSS</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">返回首页</a>
+                    <a href="../../traditional/components/animations.html" class="text-gray-600 hover:text-gray-900">
+                        切换到传统 CSS 版本
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- 过渡动画 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">过渡动画</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- 悬停缩放 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">悬停缩放</h3>
+                    <p class="text-gray-600">将鼠标悬停在此卡片上查看缩放效果</p>
+                </div>
+
+                <!-- 渐变背景 -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 p-6 rounded-lg shadow-sm transition-colors duration-300">
+                    <h3 class="text-lg font-medium text-white mb-2">渐变过渡</h3>
+                    <p class="text-white/80">悬停时改变渐变颜色</p>
+                </div>
+
+                <!-- 旋转效果 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm group">
+                    <div class="transition-transform duration-300 group-hover:rotate-180">
+                        <svg class="w-12 h-12 text-blue-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mt-4 text-center">旋转过渡</h3>
+                </div>
+
+                <!-- 阴影过渡 -->
+                <div class="bg-white p-6 rounded-lg transition-shadow duration-300 hover:shadow-xl">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">阴影过渡</h3>
+                    <p class="text-gray-600">悬停时增加阴影深度</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加载动画 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">加载动画</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- 旋转加载 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center">
+                    <div class="animate-spin h-10 w-10 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+                    <p class="mt-4 text-gray-600">旋转加载</p>
+                </div>
+
+                <!-- 脉冲加载 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center">
+                    <div class="animate-pulse-custom h-10 w-10 bg-blue-500 rounded-full"></div>
+                    <p class="mt-4 text-gray-600">脉冲加载</p>
+                </div>
+
+                <!-- 点状加载 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center">
+                    <div class="flex space-x-2">
+                        <div class="h-3 w-3 bg-blue-500 rounded-full animate-bounce"></div>
+                        <div class="h-3 w-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                        <div class="h-3 w-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+                    </div>
+                    <p class="mt-4 text-gray-600">点状加载</p>
+                </div>
+
+                <!-- 进度条加载 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-500 rounded-full animate-progress" style="width: 0%"></div>
+                    </div>
+                    <p class="mt-4 text-gray-600 text-center">进度条加载</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 滚动动画 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">滚动动画</h2>
+            <div class="space-y-4">
+                <!-- 滚动渐入 -->
+                <div class="scroll-animate bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">滚动渐入</h3>
+                    <p class="text-gray-600">向下滚动页面时，此元素会淡入并向上移动</p>
+                </div>
+
+                <!-- 滚动卡片 -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="scroll-animate bg-white p-6 rounded-lg shadow-sm" style="transition-delay: 0.2s">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">卡片 1</h3>
+                        <p class="text-gray-600">滚动时依次显示</p>
+                    </div>
+                    <div class="scroll-animate bg-white p-6 rounded-lg shadow-sm" style="transition-delay: 0.4s">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">卡片 2</h3>
+                        <p class="text-gray-600">滚动时依次显示</p>
+                    </div>
+                    <div class="scroll-animate bg-white p-6 rounded-lg shadow-sm" style="transition-delay: 0.6s">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">卡片 3</h3>
+                        <p class="text-gray-600">滚动时依次显示</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 悬停效果 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">悬停效果</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- 图片缩放 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/400/300" alt="示例图片" 
+                            class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">图片缩放</h3>
+                        <p class="text-gray-600">悬停时图片放大</p>
+                    </div>
+                </div>
+
+                <!-- 边框动画 -->
+                <div class="relative p-1 rounded-lg group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-white p-6 rounded-lg">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">边框动画</h3>
+                        <p class="text-gray-600">悬停时显示渐变边框</p>
+                    </div>
+                </div>
+
+                <!-- 按钮特效 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm space-y-4">
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300">
+                        颜色过渡
+                    </button>
+                    <button class="w-full relative overflow-hidden group bg-purple-500 text-white font-semibold py-2 px-4 rounded-md">
+                        <span class="relative z-10">波纹效果</span>
+                        <div class="absolute inset-0 h-full w-full transform scale-0 group-hover:scale-100 transition-transform duration-300 bg-purple-600 origin-center rounded-md"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 滚动动画
+        const scrollAnimates = document.querySelectorAll('.scroll-animate');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimates.forEach(element => {
+            observer.observe(element);
+        });
+
+        // 进度条动画
+        const progressBar = document.querySelector('.animate-progress');
+        let progress = 0;
+        
+        function updateProgress() {
+            if (progress < 100) {
+                progress += 1;
+                progressBar.style.width = progress + '%';
+                setTimeout(updateProgress, 50);
+            } else {
+                progress = 0;
+                progressBar.style.width = '0%';
+                setTimeout(updateProgress, 1000);
+            }
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

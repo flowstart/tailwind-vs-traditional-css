@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>响应式布局 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/responsive.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <!-- 响应式网格布局 -->
+        <section class="section">
+            <h2>响应式网格布局</h2>
+            <div class="grid-container">
+                <div class="grid-card">
+                    <h3>卡片 1</h3>
+                    <p>这是一个响应式网格布局示例，在不同屏幕尺寸下会自动调整列数。</p>
+                </div>
+                <div class="grid-card">
+                    <h3>卡片 2</h3>
+                    <p>在移动设备上显示为单列，平板电脑上显示为两列。</p>
+                </div>
+                <div class="grid-card">
+                    <h3>卡片 3</h3>
+                    <p>在桌面设备上显示为四列，实现最佳的空间利用。</p>
+                </div>
+                <div class="grid-card">
+                    <h3>卡片 4</h3>
+                    <p>使用媒体查询可以轻松实现这种响应式布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式导航栏 -->
+        <section class="section">
+            <h2>响应式导航栏</h2>
+            <nav class="responsive-nav">
+                <div class="nav-brand">
+                    <span class="logo">Logo</span>
+                </div>
+                <button class="nav-toggle">
+                    <svg class="hamburger" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <div class="nav-menu">
+                    <a href="#" class="nav-item active">首页</a>
+                    <a href="#" class="nav-item">产品</a>
+                    <a href="#" class="nav-item">服务</a>
+                    <a href="#" class="nav-item">关于</a>
+                </div>
+            </nav>
+        </section>
+
+        <!-- 响应式侧边栏布局 -->
+        <section class="section">
+            <h2>响应式侧边栏布局</h2>
+            <div class="sidebar-layout">
+                <!-- 侧边栏 -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <a href="#" class="sidebar-item active">仪表盘</a>
+                        <a href="#" class="sidebar-item">用户管理</a>
+                        <a href="#" class="sidebar-item">订单管理</a>
+                        <a href="#" class="sidebar-item">设置</a>
+                    </nav>
+                </aside>
+                <!-- 主内容区 -->
+                <div class="main-content">
+                    <h3>主内容区</h3>
+                    <p>
+                        这是一个响应式侧边栏布局示例。在移动设备上，侧边栏会显示在内容区域的上方；
+                        在较大屏幕上，侧边栏会显示在内容区域的左侧。这种布局非常适合后台管理系统。
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stats-card">
+                            <h4>统计数据</h4>
+                            <p>展示重要的数据统计信息</p>
+                        </div>
+                        <div class="stats-card">
+                            <h4>活动记录</h4>
+                            <p>显示最近的系统活动</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式英雄区块 -->
+        <section class="section">
+            <h2>响应式英雄区块</h2>
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>专注于响应式设计</h2>
+                    <p>
+                        响应式设计不仅仅是改变布局，更是为用户在不同设备上提供最佳的浏览体验。
+                        通过精心设计的断点和布局系统，我们可以确保内容在任何屏幕尺寸下都能完美呈现。
+                    </p>
+                    <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" 
+                         alt="办公场景">
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式卡片网格 -->
+        <section class="section">
+            <h2>响应式卡片网格</h2>
+            <div class="featured-grid">
+                <!-- 特色卡片 -->
+                <div class="featured-card">
+                    <h3>特色内容</h3>
+                    <p>
+                        这是一个跨越所有列的特色卡片，用于展示重要信息或推广内容。
+                        在所有屏幕尺寸下都会占据完整宽度。
+                    </p>
+                </div>
+                <!-- 普通卡片 -->
+                <div class="card">
+                    <h3>标准卡片 1</h3>
+                    <p>这些卡片会根据屏幕宽度自动调整布局，确保最佳的内容展示效果。</p>
+                </div>
+                <div class="card">
+                    <h3>标准卡片 2</h3>
+                    <p>在移动设备上显示为单列，在平板上显示为两列，在桌面设备上显示为三列。</p>
+                </div>
+                <div class="card">
+                    <h3>标准卡片 3</h3>
+                    <p>使用 CSS Grid 和媒体查询可以轻松实现这种复杂的响应式布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式表格 -->
+        <section class="section">
+            <h2>响应式表格</h2>
+            <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th class="hide-sm">职位</th>
+                            <th class="hide-md">部门</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <div class="avatar"></div>
+                                    <div class="user-details">
+                                        <div class="name">张三</div>
+                                        <div class="mobile-title">产品经理</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="hide-sm">产品经理</td>
+                            <td class="hide-md">产品部</td>
+                            <td>
+                                <span class="status status-online">在线</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <div class="avatar"></div>
+                                    <div class="user-details">
+                                        <div class="name">李四</div>
+                                        <div class="mobile-title">开发工程师</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="hide-sm">开发工程师</td>
+                            <td class="hide-md">技术部</td>
+                            <td>
+                                <span class="status status-busy">忙碌</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 移动端菜单切换
+        const menuButton = document.querySelector('.nav-toggle');
+        const mobileMenu = document.querySelector('.nav-menu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

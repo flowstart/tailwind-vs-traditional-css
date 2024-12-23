@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画效果 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/animations.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>动画效果 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/animations.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <!-- 过渡动画 -->
+        <section class="section">
+            <h2>过渡动画</h2>
+            <div class="transition-grid">
+                <!-- 悬停缩放 -->
+                <div class="transition-card hover-scale">
+                    <h3>悬停缩放</h3>
+                    <p>将鼠标悬停在此卡片上查看缩放效果</p>
+                </div>
+
+                <!-- 渐变背景 -->
+                <div class="transition-card gradient-bg">
+                    <h3>渐变过渡</h3>
+                    <p>悬停时改变渐变颜色</p>
+                </div>
+
+                <!-- 旋转效果 -->
+                <div class="transition-card">
+                    <div class="rotate-container">
+                        <svg class="rotate-icon" viewBox="0 0 24 24">
+                            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </div>
+                    <h3>旋转过渡</h3>
+                </div>
+
+                <!-- 阴影过渡 -->
+                <div class="transition-card hover-shadow">
+                    <h3>阴影过渡</h3>
+                    <p>悬停时增加阴影深度</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加载动画 -->
+        <section class="section">
+            <h2>加载动画</h2>
+            <div class="loading-grid">
+                <!-- 旋转加载 -->
+                <div class="loading-card">
+                    <div class="spinner"></div>
+                    <p>旋转加载</p>
+                </div>
+
+                <!-- 脉冲加载 -->
+                <div class="loading-card">
+                    <div class="pulse"></div>
+                    <p>脉冲加载</p>
+                </div>
+
+                <!-- 点状加载 -->
+                <div class="loading-card">
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <p>点状加载</p>
+                </div>
+
+                <!-- 进度条加载 -->
+                <div class="loading-card">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p>进度条加载</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 滚动动画 -->
+        <section class="section">
+            <h2>滚动动画</h2>
+            <div class="scroll-container">
+                <!-- 滚动渐入 -->
+                <div class="scroll-animate fade-up">
+                    <h3>滚动渐入</h3>
+                    <p>向下滚动页面时，此元素会淡入并向上移动</p>
+                </div>
+
+                <!-- 滚动卡片 -->
+                <div class="scroll-grid">
+                    <div class="scroll-animate fade-up" style="--delay: 0.2s">
+                        <h3>卡片 1</h3>
+                        <p>滚动时依次显示</p>
+                    </div>
+                    <div class="scroll-animate fade-up" style="--delay: 0.4s">
+                        <h3>卡片 2</h3>
+                        <p>滚动时依次显示</p>
+                    </div>
+                    <div class="scroll-animate fade-up" style="--delay: 0.6s">
+                        <h3>卡片 3</h3>
+                        <p>滚动时依次显示</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 悬停效果 -->
+        <section class="section">
+            <h2>悬停效果</h2>
+            <div class="hover-grid">
+                <!-- 图片缩放 -->
+                <div class="hover-card image-zoom">
+                    <div class="image-container">
+                        <img src="https://picsum.photos/400/300" alt="示例图片">
+                    </div>
+                    <div class="card-content">
+                        <h3>图片缩放</h3>
+                        <p>悬停时图片放大</p>
+                    </div>
+                </div>
+
+                <!-- 边框动画 -->
+                <div class="hover-card gradient-border">
+                    <div class="card-content">
+                        <h3>边框动画</h3>
+                        <p>悬停时显示渐变边框</p>
+                    </div>
+                </div>
+
+                <!-- 按钮特效 -->
+                <div class="hover-card button-effects">
+                    <button class="btn color-transition">颜色过渡</button>
+                    <button class="btn ripple-effect">
+                        <span>波纹效果</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 滚动动画
+        const scrollAnimates = document.querySelectorAll('.scroll-animate');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimates.forEach(element => {
+            observer.observe(element);
+        });
+
+        // 进度条动画
+        const progressFill = document.querySelector('.progress-fill');
+        let progress = 0;
+        
+        function updateProgress() {
+            if (progress < 100) {
+                progress += 1;
+                progressFill.style.width = progress + '%';
+                setTimeout(updateProgress, 50);
+            } else {
+                progress = 0;
+                progressFill.style.width = '0%';
+                setTimeout(updateProgress, 1000);
+            }
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

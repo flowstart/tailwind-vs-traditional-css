@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主题系统 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/themes.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>主题系统 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/themes.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <!-- 主题控制面板 -->
+        <section class="section">
+            <h2>主题控制</h2>
+            <div class="theme-controls">
+                <!-- 暗色模式切换 -->
+                <div class="theme-card">
+                    <h3>暗色模式</h3>
+                    <button id="darkModeToggle" class="theme-toggle-button">
+                        <span class="light-text">启用暗色模式</span>
+                        <span class="dark-text">启用浅色模式</span>
+                        <svg class="theme-icon light-icon" viewBox="0 0 24 24">
+                            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg class="theme-icon dark-icon" viewBox="0 0 24 24">
+                            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- 主题色切换 -->
+                <div class="theme-card">
+                    <h3>主题色</h3>
+                    <div class="color-buttons">
+                        <button class="color-button blue" onclick="setTheme('blue')"></button>
+                        <button class="color-button green" onclick="setTheme('green')"></button>
+                        <button class="color-button purple" onclick="setTheme('purple')"></button>
+                    </div>
+                </div>
+
+                <!-- 自定义颜色选择器 -->
+                <div class="theme-card">
+                    <h3>自定义颜色</h3>
+                    <div class="color-picker">
+                        <label>主色调</label>
+                        <input type="color" id="primaryColor" value="#0ea5e9">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主题预览 -->
+        <section class="section">
+            <h2>主题预览</h2>
+            <div class="preview-grid">
+                <!-- 按钮预览 -->
+                <div class="theme-card">
+                    <h3>按钮样式</h3>
+                    <div class="button-preview">
+                        <button class="btn btn-primary">主要按钮</button>
+                        <button class="btn btn-secondary">次要按钮</button>
+                    </div>
+                </div>
+
+                <!-- 卡片预览 -->
+                <div class="theme-card">
+                    <h3>卡片样式</h3>
+                    <div class="preview-card">
+                        <h4>示例卡片</h4>
+                        <p>这是一个示例卡片，用于展示主题效果。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 表单预览 -->
+        <section class="section">
+            <h2>表单预览</h2>
+            <div class="theme-card">
+                <form class="form-preview">
+                    <div class="form-group">
+                        <label>输入框</label>
+                        <input type="text" placeholder="请输入内容">
+                    </div>
+                    <div class="form-group">
+                        <label>选择框</label>
+                        <select>
+                            <option>选项 1</option>
+                            <option>选项 2</option>
+                            <option>选项 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>复选框</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 暗色模式切换
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // 检查本地存储中的主题设置
+        if (localStorage.theme === 'dark' || 
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.remove('light');
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+            html.classList.add('light');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+
+        // 主题色切换
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('color-theme', theme);
+        }
+
+        // 检查本地存储中的颜色主题
+        const savedColorTheme = localStorage.getItem('color-theme');
+        if (savedColorTheme) {
+            setTheme(savedColorTheme);
+        }
+
+        // 自定义颜色选择器
+        const primaryColorPicker = document.getElementById('primaryColor');
+        
+        primaryColorPicker.addEventListener('input', (e) => {
+            const color = e.target.value;
+            document.documentElement.style.setProperty('--primary-500', color);
+            
+            // 生成不同深浅的颜色
+            const darken = (color, amount) => {
+                const num = parseInt(color.slice(1), 16);
+                const r = Math.max(0, (num >> 16) - amount);
+                const g = Math.max(0, ((num >> 8) & 0x00FF) - amount);
+                const b = Math.max(0, (num & 0x0000FF) - amount);
+                return `#${(1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1)}`;
+            };
+            
+            document.documentElement.style.setProperty('--primary-600', darken(color, 20));
+            document.documentElement.style.setProperty('--primary-700', darken(color, 40));
+        });
+
+        // 保存自定义颜色
+        primaryColorPicker.addEventListener('change', (e) => {
+            localStorage.setItem('custom-primary-color', e.target.value);
+        });
+
+        // 恢复保存的自定义颜色
+        const savedCustomColor = localStorage.getItem('custom-primary-color');
+        if (savedCustomColor) {
+            primaryColorPicker.value = savedCustomColor;
+            primaryColorPicker.dispatchEvent(new Event('input'));
+        }
+    </script>
+</body>
+</html>

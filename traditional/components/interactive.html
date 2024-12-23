@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交互组件 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/interactive.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>交互组件 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/interactive.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <!-- 模态框 -->
+        <section class="section">
+            <h2>模态框</h2>
+            <div class="button-group">
+                <!-- 基础模态框触发按钮 -->
+                <button id="openBasicModal" class="btn btn-primary">
+                    打开基础模态框
+                </button>
+
+                <!-- 基础模态框 -->
+                <div id="basicModal" class="modal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <h3>基础模态框</h3>
+                            <button class="close-modal">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal-content">
+                            <p>这是一个基础的模态框示例，点击关闭按钮或遮罩层可以关闭它。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary close-modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 确认模态框触发按钮 -->
+                <button id="openConfirmModal" class="btn btn-danger">
+                    打开确认模态框
+                </button>
+
+                <!-- 确认模态框 -->
+                <div id="confirmModal" class="modal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <h3>确认操作</h3>
+                            <button class="close-confirm-modal">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal-content">
+                            <p>您确定要执行此操作吗？此操作无法撤销。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary close-confirm-modal">取消</button>
+                            <button class="btn btn-danger">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下拉菜单 -->
+        <section class="section">
+            <h2>下拉菜单</h2>
+            <div class="button-group">
+                <!-- 基础下拉菜单 -->
+                <div class="dropdown">
+                    <button id="dropdownButton" class="dropdown-toggle">
+                        选项
+                        <svg class="dropdown-icon" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+
+                    <div id="dropdownMenu" class="dropdown-menu">
+                        <a href="#" class="dropdown-item">选项 1</a>
+                        <a href="#" class="dropdown-item">选项 2</a>
+                        <a href="#" class="dropdown-item">选项 3</a>
+                    </div>
+                </div>
+
+                <!-- 多级下拉菜单 -->
+                <div class="dropdown">
+                    <button id="nestedDropdownButton" class="dropdown-toggle">
+                        更多选项
+                        <svg class="dropdown-icon" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+
+                    <div id="nestedDropdownMenu" class="dropdown-menu">
+                        <a href="#" class="dropdown-item">基础选项</a>
+                        <div class="dropdown-submenu">
+                            <a href="#" class="dropdown-item with-submenu">
+                                子菜单
+                                <svg class="submenu-icon" viewBox="0 0 20 20">
+                                    <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="#" class="dropdown-item">子选项 1</a>
+                                <a href="#" class="dropdown-item">子选项 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签页 -->
+        <section class="section">
+            <h2>标签页</h2>
+            <div class="tabs-container">
+                <!-- 标签导航 -->
+                <nav class="tabs-nav">
+                    <button class="tab-button active" data-tab="tab1">标签页 1</button>
+                    <button class="tab-button" data-tab="tab2">标签页 2</button>
+                    <button class="tab-button" data-tab="tab3">标签页 3</button>
+                </nav>
+                <!-- 标签内容 -->
+                <div class="tabs-content">
+                    <div id="tab1" class="tab-panel active">
+                        <h3>标签页 1 内容</h3>
+                        <p>这是第一个标签页的内容。标签页是一种常见的导航模式，用于在不同的内容区域之间切换。</p>
+                    </div>
+                    <div id="tab2" class="tab-panel">
+                        <h3>标签页 2 内容</h3>
+                        <p>这是第二个标签页的内容。每个标签页都可以包含不同类型的内容，如文本、图片或表单等。</p>
+                    </div>
+                    <div id="tab3" class="tab-panel">
+                        <h3>标签页 3 内容</h3>
+                        <p>这是第三个标签页的内容。使用 JavaScript 可以轻松实现标签页之间的切换效果。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 折叠面板 -->
+        <section class="section">
+            <h2>折叠面板</h2>
+            <div class="accordion">
+                <!-- 面板 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>折叠面板 1</span>
+                        <svg class="accordion-icon" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>这是第一个折叠面板的内容。折叠面板可以用来组织和隐藏内容，点击标题可以展开或收起内容。</p>
+                    </div>
+                </div>
+
+                <!-- 面板 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>折叠面板 2</span>
+                        <svg class="accordion-icon" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>这是第二个折叠面板的内容。你可以在这里放置任何类型的内容，包括文本、图片或其他组件。</p>
+                    </div>
+                </div>
+
+                <!-- 面板 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>折叠面板 3</span>
+                        <svg class="accordion-icon" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>这是第三个折叠面板的内容。折叠面板特别适合用于 FAQ 页面或需要节省空间的场景。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 模态框功能
+        function setupModal(openButtonId, modalId, closeClass) {
+            const openButton = document.getElementById(openButtonId);
+            const modal = document.getElementById(modalId);
+            const closeButtons = modal.getElementsByClassName(closeClass);
+            const overlay = modal.querySelector('.modal-overlay');
+
+            openButton.addEventListener('click', () => {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeModal() {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+
+            Array.from(closeButtons).forEach(button => {
+                button.addEventListener('click', closeModal);
+            });
+
+            overlay.addEventListener('click', closeModal);
+        }
+
+        setupModal('openBasicModal', 'basicModal', 'close-modal');
+        setupModal('openConfirmModal', 'confirmModal', 'close-confirm-modal');
+
+        // 下拉菜单功能
+        function setupDropdown(buttonId, menuId) {
+            const button = document.getElementById(buttonId);
+            const menu = document.getElementById(menuId);
+            
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', () => {
+                menu.classList.remove('show');
+            });
+
+            menu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        setupDropdown('dropdownButton', 'dropdownMenu');
+        setupDropdown('nestedDropdownButton', 'nestedDropdownMenu');
+
+        // 标签页功能
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // 移除所有活动状态
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                // 添加当前标签的活动状态
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // 折叠面板功能
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.accordion-icon');
+                
+                // 切换当前面板的状态
+                item.classList.toggle('active');
+                content.style.maxHeight = item.classList.contains('active') 
+                    ? content.scrollHeight + 'px' 
+                    : null;
+                icon.classList.toggle('rotate');
+            });
+        });
+    </script>
+</body>
+</html>

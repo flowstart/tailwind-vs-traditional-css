@@ -1,0 +1,21 @@
+/* Reset CSS */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #1d4ed8;
+  --text-color: #1f2937;
+  --light-bg: #f3f4f6;
+}
+
+/* Global styles */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--text-color);
+  line-height: 1.5;
+}

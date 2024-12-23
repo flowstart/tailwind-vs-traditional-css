@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单组件 - 传统 CSS</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/forms.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <h1>表单组件 - 传统 CSS</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">返回首页</a>
+                    <a href="../../tailwind/components/forms.html">切换到 Tailwind CSS 版本</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="content">
+            <!-- 基础表单 -->
+            <div class="form-card">
+                <h2>基础表单</h2>
+                <form class="form">
+                    <!-- 文本输入框 -->
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input type="text" id="username" name="username" placeholder="请输入用户名">
+                    </div>
+
+                    <!-- 带图标的输入框 -->
+                    <div class="form-group">
+                        <label for="email">电子邮箱</label>
+                        <div class="input-icon">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                            </svg>
+                            <input type="email" id="email" name="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <!-- 密码输入框 -->
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" id="password" name="password" placeholder="请输入密码">
+                    </div>
+
+                    <!-- 单选框组 -->
+                    <div class="form-group">
+                        <label>选择计划</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="basic" name="plan" value="basic">
+                                <label for="basic">基础版</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="pro" name="plan" value="pro">
+                                <label for="pro">专业版</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="enterprise" name="plan" value="enterprise">
+                                <label for="enterprise">企业版</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 复选框组 -->
+                    <div class="form-group">
+                        <label>兴趣爱好</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="coding" name="interests" value="coding">
+                                <label for="coding">编程</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="reading" name="interests" value="reading">
+                                <label for="reading">阅读</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="gaming" name="interests" value="gaming">
+                                <label for="gaming">游戏</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 下拉选择框 -->
+                    <div class="form-group">
+                        <label for="country">国家/地区</label>
+                        <select id="country" name="country">
+                            <option value="">请选择</option>
+                            <option value="CN">中国</option>
+                            <option value="US">美国</option>
+                            <option value="JP">日本</option>
+                            <option value="GB">英国</option>
+                        </select>
+                    </div>
+
+                    <!-- 文本域 -->
+                    <div class="form-group">
+                        <label for="about">个人简介</label>
+                        <textarea id="about" name="about" rows="3" placeholder="请简单介绍一下自己..."></textarea>
+                    </div>
+
+                    <!-- 开关按钮 -->
+                    <div class="form-group">
+                        <div class="toggle-container">
+                            <button type="button" class="toggle" role="switch" aria-checked="false">
+                                <span class="toggle-slider"></span>
+                            </button>
+                            <span class="toggle-label">接收通知</span>
+                        </div>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 内联表单 -->
+            <div class="form-card">
+                <h2>内联表单</h2>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="inline-name">姓名</label>
+                        <input type="text" id="inline-name" name="inline-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inline-email">邮箱</label>
+                        <input type="email" id="inline-email" name="inline-email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">订阅</button>
+                </form>
+            </div>
+
+            <!-- 验证状态表单 -->
+            <div class="form-card">
+                <h2>验证状态</h2>
+                <form class="form">
+                    <!-- 成功状态 -->
+                    <div class="form-group">
+                        <label for="success" class="success">成功状态</label>
+                        <div class="input-validation success">
+                            <input type="text" id="success" name="success" value="正确的输入">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <p class="help-text success">输入正确！</p>
+                    </div>
+
+                    <!-- 错误状态 -->
+                    <div class="form-group">
+                        <label for="error" class="error">错误状态</label>
+                        <div class="input-validation error">
+                            <input type="text" id="error" name="error" value="错误的输入">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <p class="help-text error">请输入有效的值！</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 开关按钮的交互
+        const toggleButton = document.querySelector('.toggle');
+        toggleButton.addEventListener('click', function() {
+            const isChecked = this.getAttribute('aria-checked') === 'true';
+            this.setAttribute('aria-checked', !isChecked);
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

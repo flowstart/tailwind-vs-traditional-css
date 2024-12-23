@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片组件 - Tailwind CSS</title>
+    <link href="/src/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">卡片组件 - Tailwind CSS</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">返回首页</a>
+                    <a href="../../traditional/components/cards.html" class="text-gray-600 hover:text-gray-900">
+                        切换到传统 CSS 版本
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            <h2 class="text-lg font-semibold mb-4">基础卡片</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 基础卡片 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/400/200" alt="卡片图片" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900">卡片标题</h3>
+                        <p class="mt-2 text-gray-600">这是一个基础卡片示例，展示了图片、标题、描述文本和按钮的基本布局。</p>
+                        <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                            了解更多
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 带标签的卡片 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://picsum.photos/400/201" alt="卡片图片" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-green-500 text-white px-2 py-1 rounded text-sm">新品</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900">带标签的卡片</h3>
+                        <p class="mt-2 text-gray-600">这个卡片在右上角添加了一个标签，用于显示状态或分类信息。</p>
+                        <button class="mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">
+                            查看详情
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 带图标的卡片 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/400/202" alt="卡片图片" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <h3 class="ml-2 text-lg font-semibold text-gray-900">带图标的卡片</h3>
+                        </div>
+                        <p class="mt-2 text-gray-600">这个卡片的标题旁边添加了一个图标，增强了视觉效果。</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                                立即购买
+                            </button>
+                            <span class="text-gray-600">¥99.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-semibold mb-4 mt-8">交互式卡片</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 悬停效果卡片 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://picsum.photos/400/203" alt="卡片图片" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900">悬停效果卡片</h3>
+                        <p class="mt-2 text-gray-600">将鼠标悬停在此卡片上会有放大和阴影加深的效果。</p>
+                        <button class="mt-4 bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded">
+                            了解更多
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 渐变背景卡片 -->
+                <div class="rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-6 text-white">
+                        <h3 class="text-lg font-semibold">渐变背景卡片</h3>
+                        <p class="mt-2 opacity-90">使用渐变背景可以创建更有趣的视觉效果。</p>
+                        <button class="mt-4 bg-white text-blue-500 font-semibold py-2 px-4 rounded hover:bg-gray-100">
+                            开始使用
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 带统计数据的卡片 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900">数据统计卡片</h3>
+                        <div class="mt-4 grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold text-blue-500">1,234</span>
+                                <span class="text-gray-600">访问量</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold text-green-500">98%</span>
+                                <span class="text-gray-600">满意度</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded">
+                            查看报告
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

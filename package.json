@@ -1,0 +1,26 @@
+{
+  "name": "tailwind-vs-traditional-css",
+  "version": "1.0.0",
+  "description": "这个项目帮助读者理解 Tailwind CSS 的特点和优势，深入学习和对比 Tailwind CSS 与传统 CSS 的不同之处。",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.5"
+  }
+}

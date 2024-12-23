@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS 示例</title>
+    <link href="./styles/tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">Tailwind CSS 示例</h1>
+                </div>
+                <div class="flex items-center">
+                    <a href="../traditional/index.html" class="text-gray-600 hover:text-gray-900">
+                        切换到传统 CSS 版本
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="bg-white shadow rounded-lg">
+            <!-- 组件导航 -->
+            <div class="border-b border-gray-200">
+                <nav class="flex flex-wrap gap-2 p-4" aria-label="组件导航">
+                    <a href="./components/buttons.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        按钮组件
+                    </a>
+                    <a href="./components/cards.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        卡片组件
+                    </a>
+                    <a href="./components/forms.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        表单组件
+                    </a>
+                    <a href="./components/responsive.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        响应式组件
+                    </a>
+                    <a href="./components/interactive.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        交互组件
+                    </a>
+                    <a href="./components/animations.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        动画效果
+                    </a>
+                    <a href="./components/utilities.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        实用组件
+                    </a>
+                    <a href="./components/themes.html" 
+                        class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+                        主题系统
+                    </a>
+                </nav>
+            </div>
+
+            <!-- 组件说明 -->
+            <div class="p-6">
+                <h2 class="text-lg font-medium text-gray-900 mb-4">组件展示</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">按钮组件</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示各种样式的按钮，包括基础按钮、轮廓按钮、图标按钮等。</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">卡片组件</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示不同类型的卡片布局，包括图文卡片、产品卡片、信息卡片等。</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">表单组件</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示各种表单元素，包括输入框、选择框、复选框等。</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">响应式组件</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示响应式布局的实现，适配不同屏幕尺寸。</p>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">交互组件</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示具有交互功能的组件，包括下拉菜单、模态框等。</p>
+                    </div>
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">动画效果</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示各种动画效果的实现，包括过渡动画、加载动画等。</p>
+                    </div>
+                    <div class="border-l-4 border-pink-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">实用组件</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示常用的实用组件，包括提示框、工具提示、进度条等。</p>
+                    </div>
+                    <div class="border-l-4 border-gray-500 pl-4">
+                        <h3 class="text-base font-medium text-gray-900">主题系统</h3>
+                        <p class="mt-1 text-sm text-gray-500">展示主题切换功能，包括暗色模式、主题色切换等。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white shadow mt-8">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500">
+                本示例展示了使用 Tailwind CSS 实现的各种组件。查看
+                <a href="../traditional/index.html" class="text-blue-500 hover:text-blue-600">传统 CSS 版本</a>
+                来比较两种实现方式的差异。
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

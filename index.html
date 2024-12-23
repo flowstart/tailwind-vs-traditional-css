@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind VS 传统 CSS</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .tailwind {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .tailwind:hover {
+            background-color: #2563eb;
+        }
+        .traditional {
+            background-color: #10b981;
+            color: white;
+        }
+        .traditional:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tailwind CSS VS 传统 CSS 对比演示</h1>
+        <div class="buttons">
+            <a href="/tailwind/index.html" class="button tailwind">Tailwind CSS 版本</a>
+            <a href="/traditional/index.html" class="button traditional">传统 CSS 版本</a>
+        </div>
+    </div>
+</body>
+</html>
